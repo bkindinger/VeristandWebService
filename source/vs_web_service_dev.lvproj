@@ -10,16 +10,126 @@
 		<Property Name="server.vi.callsEnabled" Type="Bool">true</Property>
 		<Property Name="server.vi.propertiesEnabled" Type="Bool">true</Property>
 		<Property Name="specify.custom.address" Type="Bool">false</Property>
+		<Item Name="DiscoveryServiceTest.vi" Type="VI" URL="../../sandbox/DiscoveryServiceTest.vi"/>
+		<Item Name="example.vi" Type="VI" URL="../../sandbox/example.vi"/>
 		<Item Name="exampleClient.vi" Type="VI" URL="../../sandbox/exampleClient.vi"/>
+		<Item Name="Post-Build Action.vi" Type="VI" URL="../Post-Build Action.vi"/>
+		<Item Name="VeriStandWebService" Type="Web Service">
+			<Property Name="ws.autoIncrementVersion" Type="Bool">true</Property>
+			<Property Name="ws.disconnectInline" Type="Bool">true</Property>
+			<Property Name="ws.disconnectTypeDefs" Type="Bool">false</Property>
+			<Property Name="ws.guid" Type="Str">{5B2984D5-0FE6-4BB9-9ABD-7F869FC8E927}</Property>
+			<Property Name="ws.modifyLibraryFile" Type="Bool">true</Property>
+			<Property Name="ws.private_folder_name" Type="Str">private</Property>
+			<Property Name="ws.remoteDebugging" Type="Bool">false</Property>
+			<Property Name="ws.removeLibraryItems" Type="Bool">true</Property>
+			<Property Name="ws.removePolyVIs" Type="Bool">true</Property>
+			<Property Name="ws.serveDefaultDoc" Type="Bool">true</Property>
+			<Property Name="ws.SSE2" Type="Bool">true</Property>
+			<Property Name="ws.static_permissions" Type="Str"></Property>
+			<Property Name="ws.version.build" Type="Int">77</Property>
+			<Property Name="ws.version.fix" Type="Int">0</Property>
+			<Property Name="ws.version.major" Type="Int">1</Property>
+			<Property Name="ws.version.minor" Type="Int">0</Property>
+			<Item Name="Private Content" Type="Folder" URL="../private">
+				<Property Name="NI.DISK" Type="Bool">true</Property>
+			</Item>
+			<Item Name="Startup VIs" Type="Startup VIs Container">
+				<Item Name="Startup.vi" Type="VI" URL="../startup/Startup.vi">
+					<Property Name="ws.buffered" Type="Bool">true</Property>
+					<Property Name="ws.includeNameInURL" Type="Bool">true</Property>
+					<Property Name="ws.keepInMemory" Type="Bool">true</Property>
+					<Property Name="ws.loadAtStartup" Type="Bool">true</Property>
+					<Property Name="ws.method" Type="Int">8</Property>
+					<Property Name="ws.outputFormat" Type="Int">2</Property>
+					<Property Name="ws.outputType" Type="Int">0</Property>
+					<Property Name="ws.requireAPIKey" Type="Bool">false</Property>
+					<Property Name="ws.type" Type="Int">2</Property>
+					<Property Name="ws.useHeaders" Type="Bool">true</Property>
+					<Property Name="ws.useStandardURL" Type="Bool">true</Property>
+				</Item>
+			</Item>
+			<Item Name="Web Resources" Type="HTTP WebResources Container">
+				<Item Name="cmd1" Type="HTTP WebResources Container">
+					<Item Name=":queue" Type="HTTP WebResources Container">
+						<Item Name="cmdWithOptionalQueue.vi" Type="VI" URL="../methods/cmdWithOptionalQueue.vi">
+							<Property Name="ws.buffered" Type="Bool">true</Property>
+							<Property Name="ws.includeNameInURL" Type="Bool">true</Property>
+							<Property Name="ws.keepInMemory" Type="Bool">true</Property>
+							<Property Name="ws.loadAtStartup" Type="Bool">true</Property>
+							<Property Name="ws.method" Type="Int">3</Property>
+							<Property Name="ws.outputFormat" Type="Int">2</Property>
+							<Property Name="ws.outputType" Type="Int">1</Property>
+							<Property Name="ws.permissions" Type="Str"></Property>
+							<Property Name="ws.requireAPIKey" Type="Bool">false</Property>
+							<Property Name="ws.type" Type="Int">1</Property>
+							<Property Name="ws.uri" Type="Str"></Property>
+							<Property Name="ws.useHeaders" Type="Bool">true</Property>
+							<Property Name="ws.useStandardURL" Type="Bool">false</Property>
+						</Item>
+					</Item>
+					<Item Name="cmd.vi" Type="VI" URL="../methods/cmd.vi">
+						<Property Name="ws.buffered" Type="Bool">true</Property>
+						<Property Name="ws.includeNameInURL" Type="Bool">true</Property>
+						<Property Name="ws.keepInMemory" Type="Bool">true</Property>
+						<Property Name="ws.loadAtStartup" Type="Bool">true</Property>
+						<Property Name="ws.method" Type="Int">3</Property>
+						<Property Name="ws.outputFormat" Type="Int">2</Property>
+						<Property Name="ws.outputType" Type="Int">1</Property>
+						<Property Name="ws.permissions" Type="Str"></Property>
+						<Property Name="ws.requireAPIKey" Type="Bool">false</Property>
+						<Property Name="ws.type" Type="Int">1</Property>
+						<Property Name="ws.uri" Type="Str"></Property>
+						<Property Name="ws.useHeaders" Type="Bool">true</Property>
+						<Property Name="ws.useStandardURL" Type="Bool">false</Property>
+					</Item>
+				</Item>
+				<Item Name="v1" Type="HTTP WebResources Container">
+					<Item Name="cmd" Type="HTTP WebResources Container"/>
+				</Item>
+				<Item Name="version.vi" Type="VI" URL="../methods/version.vi">
+					<Property Name="ws.buffered" Type="Bool">true</Property>
+					<Property Name="ws.includeNameInURL" Type="Bool">true</Property>
+					<Property Name="ws.keepInMemory" Type="Bool">true</Property>
+					<Property Name="ws.loadAtStartup" Type="Bool">true</Property>
+					<Property Name="ws.method" Type="Int">1</Property>
+					<Property Name="ws.outputFormat" Type="Int">2</Property>
+					<Property Name="ws.outputType" Type="Int">1</Property>
+					<Property Name="ws.permissions" Type="Str"></Property>
+					<Property Name="ws.requireAPIKey" Type="Bool">false</Property>
+					<Property Name="ws.type" Type="Int">1</Property>
+					<Property Name="ws.uri" Type="Str"></Property>
+					<Property Name="ws.useHeaders" Type="Bool">true</Property>
+					<Property Name="ws.useStandardURL" Type="Bool">false</Property>
+				</Item>
+			</Item>
+		</Item>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
+				<Item Name="8.6CompatibleGlobalVar.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/config.llb/8.6CompatibleGlobalVar.vi"/>
 				<Item Name="Check if File or Folder Exists.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/libraryn.llb/Check if File or Folder Exists.vi"/>
+				<Item Name="Clear Errors.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Clear Errors.vi"/>
+				<Item Name="Custom Device Utility Library.lvlib" Type="Library" URL="/&lt;vilib&gt;/NI VeriStand/Custom Device Tools/Custom Device Utility Library/Custom Device Utility Library.lvlib"/>
 				<Item Name="Error Cluster From Error Code.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Error Cluster From Error Code.vi"/>
+				<Item Name="Get System Directory.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/sysdir.llb/Get System Directory.vi"/>
 				<Item Name="LabVIEWHTTPClient.lvlib" Type="Library" URL="/&lt;vilib&gt;/httpClient/LabVIEWHTTPClient.lvlib"/>
 				<Item Name="NI_FileType.lvlib" Type="Library" URL="/&lt;vilib&gt;/Utility/lvfile.llb/NI_FileType.lvlib"/>
+				<Item Name="NI_LVConfig.lvlib" Type="Library" URL="/&lt;vilib&gt;/Utility/config.llb/NI_LVConfig.lvlib"/>
 				<Item Name="NI_PackedLibraryUtility.lvlib" Type="Library" URL="/&lt;vilib&gt;/Utility/LVLibp/NI_PackedLibraryUtility.lvlib"/>
+				<Item Name="NI_WebServices.lvlib" Type="Library" URL="/&lt;vilib&gt;/wsapi/NI_WebServices.lvlib"/>
 				<Item Name="Path To Command Line String.vi" Type="VI" URL="/&lt;vilib&gt;/AdvancedString/Path To Command Line String.vi"/>
 				<Item Name="PathToUNIXPathString.vi" Type="VI" URL="/&lt;vilib&gt;/Platform/CFURL.llb/PathToUNIXPathString.vi"/>
+				<Item Name="System Directory Type.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/sysdir.llb/System Directory Type.ctl"/>
+				<Item Name="Trim Whitespace.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Trim Whitespace.vi"/>
+				<Item Name="UDP Multicast Open.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/tcp.llb/UDP Multicast Open.vi"/>
+				<Item Name="UDP Multicast Read-Only Open.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/tcp.llb/UDP Multicast Read-Only Open.vi"/>
+				<Item Name="UDP Multicast Read-Write Open.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/tcp.llb/UDP Multicast Read-Write Open.vi"/>
+				<Item Name="UDP Multicast Write-Only Open.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/tcp.llb/UDP Multicast Write-Only Open.vi"/>
+				<Item Name="whitespace.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/whitespace.ctl"/>
+			</Item>
+			<Item Name="vsws.lvlib" Type="Library" URL="../vsws_api/vsws.lvlib"/>
+			<Item Name="ws_runtime.dll" Type="Document" URL="ws_runtime.dll">
+				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
 		</Item>
 		<Item Name="Build Specifications" Type="Build"/>
@@ -102,37 +212,77 @@ AddOutputFilter chunkFilter
 		<Property Name="target.webservices.SecurityAPIKey" Type="Str">PqVr/ifkAQh+lVrdPIykXlFvg12GhhQFR8H9cUhphgg=:pTe9HRlQuMfJxAG6QCGq7UvoUpJzAzWGKy5SbZ+roSU=</Property>
 		<Property Name="target.webservices.ValidTimestampWindow" Type="Int">15</Property>
 		<Item Name="example.vi" Type="VI" URL="../../sandbox/example.vi"/>
-		<Item Name="VSWebService" Type="Web Service">
+		<Item Name="VeriStandWebService" Type="Web Service">
 			<Property Name="Bld_buildSpecName" Type="Str"></Property>
-			<Property Name="Bld_version.build" Type="Int">8</Property>
+			<Property Name="Bld_version.build" Type="Int">77</Property>
 			<Property Name="ws.autoIncrementVersion" Type="Bool">true</Property>
 			<Property Name="ws.disconnectInline" Type="Bool">true</Property>
 			<Property Name="ws.disconnectTypeDefs" Type="Bool">false</Property>
 			<Property Name="ws.guid" Type="Str">{3A23A561-654B-46EC-A2F4-B21D9472AC45}</Property>
 			<Property Name="ws.modifyLibraryFile" Type="Bool">true</Property>
-			<Property Name="ws.private_folder_name" Type="Str"></Property>
+			<Property Name="ws.private_folder_name" Type="Str">private</Property>
 			<Property Name="ws.remoteDebugging" Type="Bool">false</Property>
 			<Property Name="ws.removeLibraryItems" Type="Bool">true</Property>
 			<Property Name="ws.removePolyVIs" Type="Bool">true</Property>
 			<Property Name="ws.serveDefaultDoc" Type="Bool">true</Property>
 			<Property Name="ws.SSE2" Type="Bool">true</Property>
 			<Property Name="ws.static_permissions" Type="Str"></Property>
-			<Property Name="ws.version.build" Type="Int">8</Property>
+			<Property Name="ws.version.build" Type="Int">77</Property>
 			<Property Name="ws.version.fix" Type="Int">0</Property>
 			<Property Name="ws.version.major" Type="Int">1</Property>
 			<Property Name="ws.version.minor" Type="Int">0</Property>
+			<Item Name="Private Content" Type="Folder" URL="../private">
+				<Property Name="NI.DISK" Type="Bool">true</Property>
+			</Item>
 			<Item Name="Startup VIs" Type="Startup VIs Container">
-				<Item Name="Startup.vi" Type="VI" URL="../private/Startup.vi">
+				<Item Name="Startup.vi" Type="VI" URL="../startup/Startup.vi">
 					<Property Name="ws.type" Type="Int">2</Property>
 				</Item>
 			</Item>
 			<Item Name="Web Resources" Type="HTTP WebResources Container">
-				<Item Name="cmd.vi" Type="VI" URL="../methods/cmd.vi">
+				<Item Name="cmd1" Type="HTTP WebResources Container">
+					<Item Name=":queue" Type="HTTP WebResources Container">
+						<Item Name="cmdWithOptionalQueue.vi" Type="VI" URL="../methods/cmdWithOptionalQueue.vi">
+							<Property Name="ws.buffered" Type="Bool">true</Property>
+							<Property Name="ws.includeNameInURL" Type="Bool">true</Property>
+							<Property Name="ws.keepInMemory" Type="Bool">true</Property>
+							<Property Name="ws.loadAtStartup" Type="Bool">true</Property>
+							<Property Name="ws.method" Type="Int">3</Property>
+							<Property Name="ws.outputFormat" Type="Int">2</Property>
+							<Property Name="ws.outputType" Type="Int">1</Property>
+							<Property Name="ws.permissions" Type="Str"></Property>
+							<Property Name="ws.requireAPIKey" Type="Bool">false</Property>
+							<Property Name="ws.type" Type="Int">1</Property>
+							<Property Name="ws.uri" Type="Str"></Property>
+							<Property Name="ws.useHeaders" Type="Bool">true</Property>
+							<Property Name="ws.useStandardURL" Type="Bool">false</Property>
+						</Item>
+					</Item>
+					<Item Name="cmd.vi" Type="VI" URL="../methods/cmd.vi">
+						<Property Name="ws.buffered" Type="Bool">true</Property>
+						<Property Name="ws.includeNameInURL" Type="Bool">true</Property>
+						<Property Name="ws.keepInMemory" Type="Bool">true</Property>
+						<Property Name="ws.loadAtStartup" Type="Bool">true</Property>
+						<Property Name="ws.method" Type="Int">3</Property>
+						<Property Name="ws.outputFormat" Type="Int">2</Property>
+						<Property Name="ws.outputType" Type="Int">1</Property>
+						<Property Name="ws.permissions" Type="Str"></Property>
+						<Property Name="ws.requireAPIKey" Type="Bool">false</Property>
+						<Property Name="ws.type" Type="Int">1</Property>
+						<Property Name="ws.uri" Type="Str"></Property>
+						<Property Name="ws.useHeaders" Type="Bool">true</Property>
+						<Property Name="ws.useStandardURL" Type="Bool">false</Property>
+					</Item>
+				</Item>
+				<Item Name="v1" Type="HTTP WebResources Container">
+					<Item Name="cmd" Type="HTTP WebResources Container"/>
+				</Item>
+				<Item Name="version.vi" Type="VI" URL="../methods/version.vi">
 					<Property Name="ws.buffered" Type="Bool">true</Property>
 					<Property Name="ws.includeNameInURL" Type="Bool">true</Property>
 					<Property Name="ws.keepInMemory" Type="Bool">true</Property>
 					<Property Name="ws.loadAtStartup" Type="Bool">true</Property>
-					<Property Name="ws.method" Type="Int">3</Property>
+					<Property Name="ws.method" Type="Int">1</Property>
 					<Property Name="ws.outputFormat" Type="Int">2</Property>
 					<Property Name="ws.outputType" Type="Int">1</Property>
 					<Property Name="ws.permissions" Type="Str"></Property>
@@ -140,47 +290,55 @@ AddOutputFilter chunkFilter
 					<Property Name="ws.type" Type="Int">1</Property>
 					<Property Name="ws.uri" Type="Str"></Property>
 					<Property Name="ws.useHeaders" Type="Bool">true</Property>
-					<Property Name="ws.useStandardURL" Type="Bool">true</Property>
+					<Property Name="ws.useStandardURL" Type="Bool">false</Property>
 				</Item>
 			</Item>
 		</Item>
+		<Item Name="vsws.ini" Type="Document" URL="../vsws.ini"/>
 		<Item Name="vsws.lvlib" Type="Library" URL="../vsws_api/vsws.lvlib"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
+				<Item Name="8.6CompatibleGlobalVar.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/config.llb/8.6CompatibleGlobalVar.vi"/>
+				<Item Name="Check if File or Folder Exists.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/libraryn.llb/Check if File or Folder Exists.vi"/>
+				<Item Name="Clear Errors.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Clear Errors.vi"/>
+				<Item Name="Custom Device Utility Library.lvlib" Type="Library" URL="/&lt;vilib&gt;/NI VeriStand/Custom Device Tools/Custom Device Utility Library/Custom Device Utility Library.lvlib"/>
 				<Item Name="Error Cluster From Error Code.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Error Cluster From Error Code.vi"/>
-				<Item Name="ni_emb.dll" Type="Document" URL="/&lt;vilib&gt;/ni_emb.dll"/>
-				<Item Name="NI_Real-Time Target Support.lvlib" Type="Library" URL="/&lt;vilib&gt;/NI_Real-Time Target Support.lvlib"/>
-				<Item Name="NI_SystemLogging.lvlib" Type="Library" URL="/&lt;vilib&gt;/Utility/SystemLogging/NI_SystemLogging.lvlib"/>
+				<Item Name="NI_FileType.lvlib" Type="Library" URL="/&lt;vilib&gt;/Utility/lvfile.llb/NI_FileType.lvlib"/>
+				<Item Name="NI_LVConfig.lvlib" Type="Library" URL="/&lt;vilib&gt;/Utility/config.llb/NI_LVConfig.lvlib"/>
+				<Item Name="NI_PackedLibraryUtility.lvlib" Type="Library" URL="/&lt;vilib&gt;/Utility/LVLibp/NI_PackedLibraryUtility.lvlib"/>
 				<Item Name="NI_WebServices.lvlib" Type="Library" URL="/&lt;vilib&gt;/wsapi/NI_WebServices.lvlib"/>
-			</Item>
-			<Item Name="LV Config Read String.vi" Type="VI" URL="/&lt;resource&gt;/dialog/lvconfig.llb/LV Config Read String.vi"/>
-			<Item Name="systemLogging.dll" Type="Document" URL="systemLogging.dll">
-				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
+				<Item Name="Trim Whitespace.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Trim Whitespace.vi"/>
+				<Item Name="UDP Multicast Open.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/tcp.llb/UDP Multicast Open.vi"/>
+				<Item Name="UDP Multicast Read-Only Open.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/tcp.llb/UDP Multicast Read-Only Open.vi"/>
+				<Item Name="UDP Multicast Read-Write Open.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/tcp.llb/UDP Multicast Read-Write Open.vi"/>
+				<Item Name="UDP Multicast Write-Only Open.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/tcp.llb/UDP Multicast Write-Only Open.vi"/>
+				<Item Name="whitespace.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/whitespace.ctl"/>
 			</Item>
 			<Item Name="ws_runtime.dll" Type="Document" URL="ws_runtime.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">
-			<Item Name="VS Web Service" Type="{69A947D5-514E-4E75-818E-69657C0547D8}">
+			<Item Name="VeriStand Web Service" Type="{69A947D5-514E-4E75-818E-69657C0547D8}">
 				<Property Name="App_copyErrors" Type="Bool">true</Property>
 				<Property Name="App_INI_aliasGUID" Type="Str">{40C5F78A-2F31-4F31-9C3A-2E00AC1E05BB}</Property>
 				<Property Name="App_INI_GUID" Type="Str">{BD3FDB84-D099-4C7E-8A35-60791DEDD0C0}</Property>
 				<Property Name="App_serverConfig.httpPort" Type="Int">8002</Property>
 				<Property Name="App_webService.count" Type="Int">1</Property>
-				<Property Name="App_webService[0].itemID" Type="Ref">/NI-PXIe8133-Sparks/VSWebService</Property>
+				<Property Name="App_webService[0].itemID" Type="Ref">/NI-PXIe8133-Sparks/VeriStandWebService</Property>
 				<Property Name="Bld_autoIncrement" Type="Bool">true</Property>
 				<Property Name="Bld_buildCacheID" Type="Str">{BA12CACE-B425-4EFC-B428-6F5D9C7A5756}</Property>
-				<Property Name="Bld_buildSpecName" Type="Str">VS Web Service</Property>
+				<Property Name="Bld_buildSpecName" Type="Str">VeriStand Web Service</Property>
 				<Property Name="Bld_excludeInlineSubVIs" Type="Bool">true</Property>
 				<Property Name="Bld_excludeLibraryItems" Type="Bool">true</Property>
 				<Property Name="Bld_excludePolymorphicVIs" Type="Bool">true</Property>
 				<Property Name="Bld_localDestDir" Type="Path">../builds</Property>
 				<Property Name="Bld_localDestDirType" Type="Str">relativeToCommon</Property>
+				<Property Name="Bld_postActionVIID" Type="Ref">/My Computer/Post-Build Action.vi</Property>
 				<Property Name="Bld_previewCacheID" Type="Str">{DC48DF9D-6A97-480E-A83A-8C616D04D4AB}</Property>
 				<Property Name="Bld_targetDestDir" Type="Path">/c/ni-rt/startup</Property>
-				<Property Name="Bld_version.build" Type="Int">8</Property>
-				<Property Name="Bld_version.major" Type="Int">1</Property>
+				<Property Name="Bld_version.build" Type="Int">31</Property>
+				<Property Name="Bld_version.major" Type="Int">17</Property>
 				<Property Name="CDF_Comp.Count" Type="Int">3</Property>
 				<Property Name="CDF_Comp[0].ID" Type="Str">{899452D2-C085-430B-B76D-7FDB33BB324A}</Property>
 				<Property Name="CDF_Comp[0].Title" Type="Str">LabVIEW Real-Time</Property>
@@ -200,19 +358,25 @@ AddOutputFilter chunkFilter
 				<Property Name="Destination[1].destName" Type="Str">Support Directory</Property>
 				<Property Name="Destination[1].path" Type="Path">/c/ni-rt/startup/data</Property>
 				<Property Name="Destination[1].path.type" Type="Str">&lt;none&gt;</Property>
-				<Property Name="DestinationCount" Type="Int">2</Property>
-				<Property Name="Source[0].itemID" Type="Str">{6E98137C-ACEF-47D9-9116-D81C4E9EF975}</Property>
+				<Property Name="Destination[2].destName" Type="Str">ini</Property>
+				<Property Name="Destination[2].path" Type="Path">/c/ni-rt/startup</Property>
+				<Property Name="Destination[2].path.type" Type="Str">&lt;none&gt;</Property>
+				<Property Name="DestinationCount" Type="Int">3</Property>
+				<Property Name="Source[0].itemID" Type="Str">{4CC93EC1-165E-4AE9-9602-2C087CB693FB}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[1].itemID" Type="Ref">/NI-PXIe8133-Sparks/example.vi</Property>
 				<Property Name="Source[1].sourceInclusion" Type="Str">TopLevel</Property>
 				<Property Name="Source[1].type" Type="Str">VI</Property>
-				<Property Name="SourceCount" Type="Int">2</Property>
+				<Property Name="Source[2].destinationIndex" Type="Int">2</Property>
+				<Property Name="Source[2].itemID" Type="Ref">/NI-PXIe8133-Sparks/vsws.ini</Property>
+				<Property Name="Source[2].sourceInclusion" Type="Str">Include</Property>
+				<Property Name="SourceCount" Type="Int">3</Property>
 				<Property Name="TgtF_companyName" Type="Str">National Instruments</Property>
-				<Property Name="TgtF_fileDescription" Type="Str">VS Web Service</Property>
-				<Property Name="TgtF_internalName" Type="Str">VS Web Service</Property>
+				<Property Name="TgtF_fileDescription" Type="Str">VeriStand Web Service</Property>
+				<Property Name="TgtF_internalName" Type="Str">VeriStand Web Service</Property>
 				<Property Name="TgtF_legalCopyright" Type="Str">Copyright © 2018 National Instruments</Property>
-				<Property Name="TgtF_productName" Type="Str">VS Web Service</Property>
+				<Property Name="TgtF_productName" Type="Str">VeriStand Web Service</Property>
 				<Property Name="TgtF_targetfileGUID" Type="Str">{B7367D51-66D1-42C9-ADB4-6767C8646E0D}</Property>
 				<Property Name="TgtF_targetfileName" Type="Str">dummy.rtexe</Property>
 				<Property Name="TgtF_versionIndependent" Type="Bool">true</Property>

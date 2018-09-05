@@ -1,5 +1,5 @@
 [My Computer]
-My Computer = "10.1.128.48"
+My Computer = "192.168.0.15"
 
 [NI-PXIe8133-Sparks]
 NI-PXIe8133-Sparks = "10.1.128.70"
