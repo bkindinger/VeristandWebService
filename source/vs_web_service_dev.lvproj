@@ -15,6 +15,8 @@
 		<Item Name="exampleClient.vi" Type="VI" URL="../../sandbox/exampleClient.vi"/>
 		<Item Name="Post-Build Action.vi" Type="VI" URL="../Post-Build Action.vi"/>
 		<Item Name="VeriStandWebService" Type="Web Service">
+			<Property Name="Bld_buildSpecName" Type="Str"></Property>
+			<Property Name="Bld_version.build" Type="Int">2</Property>
 			<Property Name="ws.autoIncrementVersion" Type="Bool">true</Property>
 			<Property Name="ws.disconnectInline" Type="Bool">true</Property>
 			<Property Name="ws.disconnectTypeDefs" Type="Bool">false</Property>
@@ -27,7 +29,7 @@
 			<Property Name="ws.serveDefaultDoc" Type="Bool">true</Property>
 			<Property Name="ws.SSE2" Type="Bool">true</Property>
 			<Property Name="ws.static_permissions" Type="Str"></Property>
-			<Property Name="ws.version.build" Type="Int">77</Property>
+			<Property Name="ws.version.build" Type="Int">79</Property>
 			<Property Name="ws.version.fix" Type="Int">0</Property>
 			<Property Name="ws.version.major" Type="Int">1</Property>
 			<Property Name="ws.version.minor" Type="Int">0</Property>
@@ -36,23 +38,30 @@
 			</Item>
 			<Item Name="Startup VIs" Type="Startup VIs Container">
 				<Item Name="Startup.vi" Type="VI" URL="../startup/Startup.vi">
-					<Property Name="ws.buffered" Type="Bool">true</Property>
-					<Property Name="ws.includeNameInURL" Type="Bool">true</Property>
-					<Property Name="ws.keepInMemory" Type="Bool">true</Property>
-					<Property Name="ws.loadAtStartup" Type="Bool">true</Property>
-					<Property Name="ws.method" Type="Int">8</Property>
-					<Property Name="ws.outputFormat" Type="Int">2</Property>
-					<Property Name="ws.outputType" Type="Int">0</Property>
-					<Property Name="ws.requireAPIKey" Type="Bool">false</Property>
 					<Property Name="ws.type" Type="Int">2</Property>
-					<Property Name="ws.useHeaders" Type="Bool">true</Property>
-					<Property Name="ws.useStandardURL" Type="Bool">true</Property>
 				</Item>
 			</Item>
 			<Item Name="Web Resources" Type="HTTP WebResources Container">
-				<Item Name="cmd1" Type="HTTP WebResources Container">
-					<Item Name=":queue" Type="HTTP WebResources Container">
-						<Item Name="cmdWithOptionalQueue.vi" Type="VI" URL="../methods/cmdWithOptionalQueue.vi">
+				<Item Name="v1" Type="HTTP WebResources Container">
+					<Item Name="cmd" Type="HTTP WebResources Container">
+						<Item Name=":queue" Type="HTTP WebResources Container">
+							<Item Name="cmdWithOptionalQueue.vi" Type="VI" URL="../methods/cmdWithOptionalQueue.vi">
+								<Property Name="ws.buffered" Type="Bool">true</Property>
+								<Property Name="ws.includeNameInURL" Type="Bool">true</Property>
+								<Property Name="ws.keepInMemory" Type="Bool">true</Property>
+								<Property Name="ws.loadAtStartup" Type="Bool">true</Property>
+								<Property Name="ws.method" Type="Int">3</Property>
+								<Property Name="ws.outputFormat" Type="Int">2</Property>
+								<Property Name="ws.outputType" Type="Int">1</Property>
+								<Property Name="ws.permissions" Type="Str"></Property>
+								<Property Name="ws.requireAPIKey" Type="Bool">false</Property>
+								<Property Name="ws.type" Type="Int">1</Property>
+								<Property Name="ws.uri" Type="Str"></Property>
+								<Property Name="ws.useHeaders" Type="Bool">true</Property>
+								<Property Name="ws.useStandardURL" Type="Bool">false</Property>
+							</Item>
+						</Item>
+						<Item Name="cmd.vi" Type="VI" URL="../methods/cmd.vi">
 							<Property Name="ws.buffered" Type="Bool">true</Property>
 							<Property Name="ws.includeNameInURL" Type="Bool">true</Property>
 							<Property Name="ws.keepInMemory" Type="Bool">true</Property>
@@ -68,24 +77,6 @@
 							<Property Name="ws.useStandardURL" Type="Bool">false</Property>
 						</Item>
 					</Item>
-					<Item Name="cmd.vi" Type="VI" URL="../methods/cmd.vi">
-						<Property Name="ws.buffered" Type="Bool">true</Property>
-						<Property Name="ws.includeNameInURL" Type="Bool">true</Property>
-						<Property Name="ws.keepInMemory" Type="Bool">true</Property>
-						<Property Name="ws.loadAtStartup" Type="Bool">true</Property>
-						<Property Name="ws.method" Type="Int">3</Property>
-						<Property Name="ws.outputFormat" Type="Int">2</Property>
-						<Property Name="ws.outputType" Type="Int">1</Property>
-						<Property Name="ws.permissions" Type="Str"></Property>
-						<Property Name="ws.requireAPIKey" Type="Bool">false</Property>
-						<Property Name="ws.type" Type="Int">1</Property>
-						<Property Name="ws.uri" Type="Str"></Property>
-						<Property Name="ws.useHeaders" Type="Bool">true</Property>
-						<Property Name="ws.useStandardURL" Type="Bool">false</Property>
-					</Item>
-				</Item>
-				<Item Name="v1" Type="HTTP WebResources Container">
-					<Item Name="cmd" Type="HTTP WebResources Container"/>
 				</Item>
 				<Item Name="version.vi" Type="VI" URL="../methods/version.vi">
 					<Property Name="ws.buffered" Type="Bool">true</Property>
@@ -104,6 +95,7 @@
 				</Item>
 			</Item>
 		</Item>
+		<Item Name="vsws.ini" Type="Document" URL="../vsws.ini"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="8.6CompatibleGlobalVar.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/config.llb/8.6CompatibleGlobalVar.vi"/>
@@ -132,7 +124,92 @@
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
 		</Item>
-		<Item Name="Build Specifications" Type="Build"/>
+		<Item Name="Build Specifications" Type="Build">
+			<Item Name="test" Type="EXE">
+				<Property Name="App_copyErrors" Type="Bool">true</Property>
+				<Property Name="App_INI_aliasGUID" Type="Str">{81976D31-799D-44B5-9F88-0BB72F430065}</Property>
+				<Property Name="App_INI_GUID" Type="Str">{4B0ECF4A-C6D1-4867-95CB-70A7ECDAD695}</Property>
+				<Property Name="App_serverConfig.httpPort" Type="Int">8002</Property>
+				<Property Name="Bld_autoIncrement" Type="Bool">true</Property>
+				<Property Name="Bld_buildCacheID" Type="Str">{B7E37DAC-BA0C-4D65-B3F7-A6EB2C25B101}</Property>
+				<Property Name="Bld_buildSpecName" Type="Str">test</Property>
+				<Property Name="Bld_excludeInlineSubVIs" Type="Bool">true</Property>
+				<Property Name="Bld_excludeLibraryItems" Type="Bool">true</Property>
+				<Property Name="Bld_excludePolymorphicVIs" Type="Bool">true</Property>
+				<Property Name="Bld_localDestDir" Type="Path">../builds/test</Property>
+				<Property Name="Bld_localDestDirType" Type="Str">relativeToCommon</Property>
+				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
+				<Property Name="Bld_previewCacheID" Type="Str">{6D7AEAF6-976C-4A8C-B779-37D59CD953A7}</Property>
+				<Property Name="Bld_version.build" Type="Int">1</Property>
+				<Property Name="Bld_version.major" Type="Int">1</Property>
+				<Property Name="Destination[0].destName" Type="Str">Application.exe</Property>
+				<Property Name="Destination[0].path" Type="Path">../builds/test/Application.exe</Property>
+				<Property Name="Destination[0].preserveHierarchy" Type="Bool">true</Property>
+				<Property Name="Destination[0].type" Type="Str">App</Property>
+				<Property Name="Destination[1].destName" Type="Str">Support Directory</Property>
+				<Property Name="Destination[1].path" Type="Path">../builds/test/data</Property>
+				<Property Name="DestinationCount" Type="Int">2</Property>
+				<Property Name="Source[0].itemID" Type="Str">{627BAADE-A316-4C4F-A0BD-92E914DDC750}</Property>
+				<Property Name="Source[0].type" Type="Str">Container</Property>
+				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
+				<Property Name="Source[1].itemID" Type="Ref">/My Computer/example.vi</Property>
+				<Property Name="Source[1].sourceInclusion" Type="Str">TopLevel</Property>
+				<Property Name="Source[1].type" Type="Str">VI</Property>
+				<Property Name="SourceCount" Type="Int">2</Property>
+				<Property Name="TgtF_companyName" Type="Str">National Instruments</Property>
+				<Property Name="TgtF_fileDescription" Type="Str">test</Property>
+				<Property Name="TgtF_internalName" Type="Str">test</Property>
+				<Property Name="TgtF_legalCopyright" Type="Str">Copyright © 2018 National Instruments</Property>
+				<Property Name="TgtF_productName" Type="Str">test</Property>
+				<Property Name="TgtF_targetfileGUID" Type="Str">{3AA9D895-C8DB-43FA-9C16-EDA62FB880AE}</Property>
+				<Property Name="TgtF_targetfileName" Type="Str">Application.exe</Property>
+				<Property Name="TgtF_versionIndependent" Type="Bool">true</Property>
+			</Item>
+			<Item Name="VeriStand Web Service" Type="EXE">
+				<Property Name="App_copyErrors" Type="Bool">true</Property>
+				<Property Name="App_INI_aliasGUID" Type="Str">{F1A96845-C695-4267-8114-E292836FD255}</Property>
+				<Property Name="App_INI_GUID" Type="Str">{F8AE6A61-3236-47A7-A741-E5C148E52D01}</Property>
+				<Property Name="App_serverConfig.httpPort" Type="Int">8002</Property>
+				<Property Name="App_webService.count" Type="Int">1</Property>
+				<Property Name="App_webService[0].itemID" Type="Ref">/My Computer/VeriStandWebService</Property>
+				<Property Name="Bld_autoIncrement" Type="Bool">true</Property>
+				<Property Name="Bld_buildCacheID" Type="Str">{8248AD0B-4C39-48E1-BF1E-393199EAC1B9}</Property>
+				<Property Name="Bld_buildSpecName" Type="Str">VeriStand Web Service</Property>
+				<Property Name="Bld_excludeInlineSubVIs" Type="Bool">true</Property>
+				<Property Name="Bld_excludeLibraryItems" Type="Bool">true</Property>
+				<Property Name="Bld_excludePolymorphicVIs" Type="Bool">true</Property>
+				<Property Name="Bld_localDestDir" Type="Path">../builds/Desktop</Property>
+				<Property Name="Bld_localDestDirType" Type="Str">relativeToCommon</Property>
+				<Property Name="Bld_previewCacheID" Type="Str">{509729F7-4BF2-4ECD-802E-CC6EBD33DB73}</Property>
+				<Property Name="Bld_version.build" Type="Int">2</Property>
+				<Property Name="Bld_version.major" Type="Int">1</Property>
+				<Property Name="Destination[0].destName" Type="Str">dummy.exe</Property>
+				<Property Name="Destination[0].path" Type="Path">../builds/Desktop/dummy.exe</Property>
+				<Property Name="Destination[0].preserveHierarchy" Type="Bool">true</Property>
+				<Property Name="Destination[0].type" Type="Str">App</Property>
+				<Property Name="Destination[1].destName" Type="Str">Support Directory</Property>
+				<Property Name="Destination[1].path" Type="Path">../builds/Desktop/data</Property>
+				<Property Name="DestinationCount" Type="Int">2</Property>
+				<Property Name="Source[0].itemID" Type="Str">{7C734FD2-6EB3-4E2B-A4B5-7BC9FB1335FE}</Property>
+				<Property Name="Source[0].type" Type="Str">Container</Property>
+				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
+				<Property Name="Source[1].itemID" Type="Ref">/My Computer/example.vi</Property>
+				<Property Name="Source[1].sourceInclusion" Type="Str">TopLevel</Property>
+				<Property Name="Source[1].type" Type="Str">VI</Property>
+				<Property Name="Source[2].destinationIndex" Type="Int">0</Property>
+				<Property Name="Source[2].itemID" Type="Ref">/My Computer/vsws.ini</Property>
+				<Property Name="Source[2].sourceInclusion" Type="Str">Include</Property>
+				<Property Name="SourceCount" Type="Int">3</Property>
+				<Property Name="TgtF_companyName" Type="Str">National Instruments</Property>
+				<Property Name="TgtF_fileDescription" Type="Str">VeriStand Web Service</Property>
+				<Property Name="TgtF_internalName" Type="Str">VeriStand Web Service</Property>
+				<Property Name="TgtF_legalCopyright" Type="Str">Copyright © 2018 National Instruments</Property>
+				<Property Name="TgtF_productName" Type="Str">VeriStand Web Service</Property>
+				<Property Name="TgtF_targetfileGUID" Type="Str">{C605DBB1-6C68-427F-80EE-6C2B75E67DEE}</Property>
+				<Property Name="TgtF_targetfileName" Type="Str">dummy.exe</Property>
+				<Property Name="TgtF_versionIndependent" Type="Bool">true</Property>
+			</Item>
+		</Item>
 	</Item>
 	<Item Name="NI-PXIe8133-Sparks" Type="RT PXI Chassis">
 		<Property Name="alias.name" Type="Str">NI-PXIe8133-Sparks</Property>
@@ -214,7 +291,7 @@ AddOutputFilter chunkFilter
 		<Item Name="example.vi" Type="VI" URL="../../sandbox/example.vi"/>
 		<Item Name="VeriStandWebService" Type="Web Service">
 			<Property Name="Bld_buildSpecName" Type="Str"></Property>
-			<Property Name="Bld_version.build" Type="Int">77</Property>
+			<Property Name="Bld_version.build" Type="Int">86</Property>
 			<Property Name="ws.autoIncrementVersion" Type="Bool">true</Property>
 			<Property Name="ws.disconnectInline" Type="Bool">true</Property>
 			<Property Name="ws.disconnectTypeDefs" Type="Bool">false</Property>
@@ -227,7 +304,7 @@ AddOutputFilter chunkFilter
 			<Property Name="ws.serveDefaultDoc" Type="Bool">true</Property>
 			<Property Name="ws.SSE2" Type="Bool">true</Property>
 			<Property Name="ws.static_permissions" Type="Str"></Property>
-			<Property Name="ws.version.build" Type="Int">77</Property>
+			<Property Name="ws.version.build" Type="Int">86</Property>
 			<Property Name="ws.version.fix" Type="Int">0</Property>
 			<Property Name="ws.version.major" Type="Int">1</Property>
 			<Property Name="ws.version.minor" Type="Int">0</Property>
@@ -240,9 +317,26 @@ AddOutputFilter chunkFilter
 				</Item>
 			</Item>
 			<Item Name="Web Resources" Type="HTTP WebResources Container">
-				<Item Name="cmd1" Type="HTTP WebResources Container">
-					<Item Name=":queue" Type="HTTP WebResources Container">
-						<Item Name="cmdWithOptionalQueue.vi" Type="VI" URL="../methods/cmdWithOptionalQueue.vi">
+				<Item Name="v1" Type="HTTP WebResources Container">
+					<Item Name="cmd" Type="HTTP WebResources Container">
+						<Item Name=":queue" Type="HTTP WebResources Container">
+							<Item Name="cmdWithOptionalQueue.vi" Type="VI" URL="../methods/cmdWithOptionalQueue.vi">
+								<Property Name="ws.buffered" Type="Bool">true</Property>
+								<Property Name="ws.includeNameInURL" Type="Bool">true</Property>
+								<Property Name="ws.keepInMemory" Type="Bool">true</Property>
+								<Property Name="ws.loadAtStartup" Type="Bool">true</Property>
+								<Property Name="ws.method" Type="Int">3</Property>
+								<Property Name="ws.outputFormat" Type="Int">2</Property>
+								<Property Name="ws.outputType" Type="Int">1</Property>
+								<Property Name="ws.permissions" Type="Str"></Property>
+								<Property Name="ws.requireAPIKey" Type="Bool">false</Property>
+								<Property Name="ws.type" Type="Int">1</Property>
+								<Property Name="ws.uri" Type="Str"></Property>
+								<Property Name="ws.useHeaders" Type="Bool">true</Property>
+								<Property Name="ws.useStandardURL" Type="Bool">false</Property>
+							</Item>
+						</Item>
+						<Item Name="cmd.vi" Type="VI" URL="../methods/cmd.vi">
 							<Property Name="ws.buffered" Type="Bool">true</Property>
 							<Property Name="ws.includeNameInURL" Type="Bool">true</Property>
 							<Property Name="ws.keepInMemory" Type="Bool">true</Property>
@@ -258,12 +352,12 @@ AddOutputFilter chunkFilter
 							<Property Name="ws.useStandardURL" Type="Bool">false</Property>
 						</Item>
 					</Item>
-					<Item Name="cmd.vi" Type="VI" URL="../methods/cmd.vi">
+					<Item Name="version.vi" Type="VI" URL="../methods/version.vi">
 						<Property Name="ws.buffered" Type="Bool">true</Property>
 						<Property Name="ws.includeNameInURL" Type="Bool">true</Property>
 						<Property Name="ws.keepInMemory" Type="Bool">true</Property>
 						<Property Name="ws.loadAtStartup" Type="Bool">true</Property>
-						<Property Name="ws.method" Type="Int">3</Property>
+						<Property Name="ws.method" Type="Int">1</Property>
 						<Property Name="ws.outputFormat" Type="Int">2</Property>
 						<Property Name="ws.outputType" Type="Int">1</Property>
 						<Property Name="ws.permissions" Type="Str"></Property>
@@ -273,24 +367,6 @@ AddOutputFilter chunkFilter
 						<Property Name="ws.useHeaders" Type="Bool">true</Property>
 						<Property Name="ws.useStandardURL" Type="Bool">false</Property>
 					</Item>
-				</Item>
-				<Item Name="v1" Type="HTTP WebResources Container">
-					<Item Name="cmd" Type="HTTP WebResources Container"/>
-				</Item>
-				<Item Name="version.vi" Type="VI" URL="../methods/version.vi">
-					<Property Name="ws.buffered" Type="Bool">true</Property>
-					<Property Name="ws.includeNameInURL" Type="Bool">true</Property>
-					<Property Name="ws.keepInMemory" Type="Bool">true</Property>
-					<Property Name="ws.loadAtStartup" Type="Bool">true</Property>
-					<Property Name="ws.method" Type="Int">1</Property>
-					<Property Name="ws.outputFormat" Type="Int">2</Property>
-					<Property Name="ws.outputType" Type="Int">1</Property>
-					<Property Name="ws.permissions" Type="Str"></Property>
-					<Property Name="ws.requireAPIKey" Type="Bool">false</Property>
-					<Property Name="ws.type" Type="Int">1</Property>
-					<Property Name="ws.uri" Type="Str"></Property>
-					<Property Name="ws.useHeaders" Type="Bool">true</Property>
-					<Property Name="ws.useStandardURL" Type="Bool">false</Property>
 				</Item>
 			</Item>
 		</Item>
@@ -319,7 +395,7 @@ AddOutputFilter chunkFilter
 			</Item>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">
-			<Item Name="VeriStand Web Service" Type="{69A947D5-514E-4E75-818E-69657C0547D8}">
+			<Item Name="PharLap" Type="{69A947D5-514E-4E75-818E-69657C0547D8}">
 				<Property Name="App_copyErrors" Type="Bool">true</Property>
 				<Property Name="App_INI_aliasGUID" Type="Str">{40C5F78A-2F31-4F31-9C3A-2E00AC1E05BB}</Property>
 				<Property Name="App_INI_GUID" Type="Str">{BD3FDB84-D099-4C7E-8A35-60791DEDD0C0}</Property>
@@ -328,28 +404,17 @@ AddOutputFilter chunkFilter
 				<Property Name="App_webService[0].itemID" Type="Ref">/NI-PXIe8133-Sparks/VeriStandWebService</Property>
 				<Property Name="Bld_autoIncrement" Type="Bool">true</Property>
 				<Property Name="Bld_buildCacheID" Type="Str">{BA12CACE-B425-4EFC-B428-6F5D9C7A5756}</Property>
-				<Property Name="Bld_buildSpecName" Type="Str">VeriStand Web Service</Property>
+				<Property Name="Bld_buildSpecName" Type="Str">PharLap</Property>
 				<Property Name="Bld_excludeInlineSubVIs" Type="Bool">true</Property>
 				<Property Name="Bld_excludeLibraryItems" Type="Bool">true</Property>
 				<Property Name="Bld_excludePolymorphicVIs" Type="Bool">true</Property>
-				<Property Name="Bld_localDestDir" Type="Path">../builds</Property>
+				<Property Name="Bld_localDestDir" Type="Path">../builds/VeriStand Web Service/2017/PharLap</Property>
 				<Property Name="Bld_localDestDirType" Type="Str">relativeToCommon</Property>
 				<Property Name="Bld_postActionVIID" Type="Ref">/My Computer/Post-Build Action.vi</Property>
 				<Property Name="Bld_previewCacheID" Type="Str">{DC48DF9D-6A97-480E-A83A-8C616D04D4AB}</Property>
 				<Property Name="Bld_targetDestDir" Type="Path">/c/ni-rt/startup</Property>
-				<Property Name="Bld_version.build" Type="Int">31</Property>
+				<Property Name="Bld_version.build" Type="Int">36</Property>
 				<Property Name="Bld_version.major" Type="Int">17</Property>
-				<Property Name="CDF_Comp.Count" Type="Int">3</Property>
-				<Property Name="CDF_Comp[0].ID" Type="Str">{899452D2-C085-430B-B76D-7FDB33BB324A}</Property>
-				<Property Name="CDF_Comp[0].Title" Type="Str">LabVIEW Real-Time</Property>
-				<Property Name="CDF_Comp[0].Version" Type="Str">17.0.0</Property>
-				<Property Name="CDF_Comp[1].ID" Type="Str">{7AFF4BC1-AF4B-4EBE-AE9A-ABD088A1FCDB}</Property>
-				<Property Name="CDF_Comp[1].Title" Type="Str">NI Application Web Server</Property>
-				<Property Name="CDF_Comp[1].Version" Type="Str">17.0.0</Property>
-				<Property Name="CDF_Comp[2].ID" Type="Str">{660189F1-67A9-4328-B4F0-AF1499AF1B55}</Property>
-				<Property Name="CDF_Comp[2].Title" Type="Str">NI VeriStand Engine</Property>
-				<Property Name="CDF_Comp[2].Version" Type="Str">2017.0.0</Property>
-				<Property Name="CDF_enabled" Type="Bool">true</Property>
 				<Property Name="Destination[0].destName" Type="Str">dummy.rtexe</Property>
 				<Property Name="Destination[0].path" Type="Path">/c/ni-rt/startup/dummy.rtexe</Property>
 				<Property Name="Destination[0].path.type" Type="Str">&lt;none&gt;</Property>
@@ -362,7 +427,7 @@ AddOutputFilter chunkFilter
 				<Property Name="Destination[2].path" Type="Path">/c/ni-rt/startup</Property>
 				<Property Name="Destination[2].path.type" Type="Str">&lt;none&gt;</Property>
 				<Property Name="DestinationCount" Type="Int">3</Property>
-				<Property Name="Source[0].itemID" Type="Str">{4CC93EC1-165E-4AE9-9602-2C087CB693FB}</Property>
+				<Property Name="Source[0].itemID" Type="Str">{7D604570-323C-42AA-BDA3-077030B7566E}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[1].itemID" Type="Ref">/NI-PXIe8133-Sparks/example.vi</Property>
@@ -373,10 +438,10 @@ AddOutputFilter chunkFilter
 				<Property Name="Source[2].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="SourceCount" Type="Int">3</Property>
 				<Property Name="TgtF_companyName" Type="Str">National Instruments</Property>
-				<Property Name="TgtF_fileDescription" Type="Str">VeriStand Web Service</Property>
-				<Property Name="TgtF_internalName" Type="Str">VeriStand Web Service</Property>
+				<Property Name="TgtF_fileDescription" Type="Str">PharLap</Property>
+				<Property Name="TgtF_internalName" Type="Str">PharLap</Property>
 				<Property Name="TgtF_legalCopyright" Type="Str">Copyright © 2018 National Instruments</Property>
-				<Property Name="TgtF_productName" Type="Str">VeriStand Web Service</Property>
+				<Property Name="TgtF_productName" Type="Str">PharLap</Property>
 				<Property Name="TgtF_targetfileGUID" Type="Str">{B7367D51-66D1-42C9-ADB4-6767C8646E0D}</Property>
 				<Property Name="TgtF_targetfileName" Type="Str">dummy.rtexe</Property>
 				<Property Name="TgtF_versionIndependent" Type="Bool">true</Property>

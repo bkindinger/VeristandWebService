@@ -1,7 +1,7 @@
-<VI_Package_Builder_Settings Version="2017" Created_Date="2018-08-31 13:41:30" Modified_Date="2018-09-04 16:36:27" Creator="W7" Comments="" ID="b9df2d647682f0d92af2b7fb7d21fa25">
+<VI_Package_Builder_Settings Version="2017" Created_Date="2018-08-31 13:41:30" Modified_Date="2018-09-05 13:13:13" Creator="W7" Comments="" ID="e31cb87481f9cc955f567f244dd02002">
   <Library_General_Settings>
     <Package_File_Name>ni_lib_VSWeb_Service</Package_File_Name>
-    <Library_Version>17.0.0.12</Library_Version>
+    <Library_Version>17.0.0.17</Library_Version>
     <Auto_Increment_Version>false</Auto_Increment_Version>
     <Library_Source_Folder>.</Library_Source_Folder>
     <Library_Output_Folder>builds</Library_Output_Folder>
@@ -44,7 +44,7 @@
       <Examples>
         <LLB>false</LLB>
         <Preserve_Hierarchy>true</Preserve_Hierarchy>
-        <Path>&lt;OS Application Files&gt;\National Instruments\RT Images</Path>
+        <Path>&lt;OS Application Files&gt;\National Instruments\RT Images\VeriStand Web Services</Path>
       </Examples>
       <Custom_Probes>
         <LLB>false</LLB>
@@ -109,7 +109,7 @@
         <Additional_Destination_Index>0</Additional_Destination_Index>
       </Destination_Overrides>
       <Destination_Overrides>
-        <Path>builds/VeriStand Web Service</Path>
+        <Path>builds/VeriStand Web Service/2017</Path>
         <Destination>1</Destination>
         <Additional_Destination>false</Additional_Destination>
         <Additional_Destination_Index>0</Additional_Destination_Index>
@@ -146,10 +146,19 @@
         <Path>source/vsws.ini</Path>
       </Exclusions>
       <Exclusions>
-        <Path>builds/depinstr.bin</Path>
+        <Path>VeriStandWebService.cdf</Path>
       </Exclusions>
       <Exclusions>
-        <Path>VeriStandWebService.cdf</Path>
+        <Path>builds/LICENSE.txt</Path>
+      </Exclusions>
+      <Exclusions>
+        <Path>Post-Install Custom Action.vi</Path>
+      </Exclusions>
+      <Exclusions>
+        <Path>Post-Uninstall Custom Action.vi</Path>
+      </Exclusions>
+      <Exclusions>
+        <Path>Pre-Install Custom Action.vi</Path>
       </Exclusions>
     </Source_Files>
     <License_Agreement_Filepath>builds\LICENSE.txt</License_Agreement_Filepath>
@@ -306,7 +315,7 @@
         <Path>source\vsws_api\Discover.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>85BEDAFBAD4E07C8DB25C58D8329BE8D</GUID>
+      <GUID>9105D8D586D7543583BE168F683F5875</GUID>
     </Functions_Palette_Data>
   </Library_Palette_Definition>
 </VI_Package_Builder_Settings>
