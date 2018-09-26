@@ -1,7 +1,7 @@
-<VI_Package_Builder_Settings Version="2017" Created_Date="2018-08-31 13:41:30" Modified_Date="2018-09-05 13:13:13" Creator="W7" Comments="" ID="e31cb87481f9cc955f567f244dd02002">
+<VI_Package_Builder_Settings Version="2017" Created_Date="2018-08-31 13:41:30" Modified_Date="2018-09-26 12:56:31" Creator="W7" Comments="" ID="83d9b8612cb57fd70ec875c3df4ca151">
   <Library_General_Settings>
     <Package_File_Name>ni_lib_VSWeb_Service</Package_File_Name>
-    <Library_Version>17.0.0.17</Library_Version>
+    <Library_Version>17.0.0.20</Library_Version>
     <Auto_Increment_Version>false</Auto_Increment_Version>
     <Library_Source_Folder>.</Library_Source_Folder>
     <Library_Output_Folder>builds</Library_Output_Folder>
@@ -49,7 +49,7 @@
       <Custom_Probes>
         <LLB>false</LLB>
         <Preserve_Hierarchy>true</Preserve_Hierarchy>
-        <Path/>
+        <Path>&lt;OS Application Files&gt;\National Instruments\VeriStand 2017</Path>
       </Custom_Probes>
       <Custom_Errors>
         <Preserve_Hierarchy>true</Preserve_Hierarchy>
@@ -114,6 +114,24 @@
         <Additional_Destination>false</Additional_Destination>
         <Additional_Destination_Index>0</Additional_Destination_Index>
       </Destination_Overrides>
+      <Destination_Overrides>
+        <Path>builds/VeriStand Web Service/2017/Desktop/VeriStandWebService.lvws</Path>
+        <Destination>2</Destination>
+        <Additional_Destination>false</Additional_Destination>
+        <Additional_Destination_Index>0</Additional_Destination_Index>
+      </Destination_Overrides>
+      <Destination_Overrides>
+        <Path>builds/VeriStand Web Service/2017/Desktop/niembeddedws.conf</Path>
+        <Destination>2</Destination>
+        <Additional_Destination>false</Additional_Destination>
+        <Additional_Destination_Index>0</Additional_Destination_Index>
+      </Destination_Overrides>
+      <Destination_Overrides>
+        <Path>builds/VeriStand Web Service/2017/Desktop/data</Path>
+        <Destination>2</Destination>
+        <Additional_Destination>false</Additional_Destination>
+        <Additional_Destination_Index>0</Additional_Destination_Index>
+      </Destination_Overrides>
       <Password_Overrides>
         <Path>.</Path>
         <Password/>
@@ -137,9 +155,6 @@
         <Path>source/startup</Path>
       </Exclusions>
       <Exclusions>
-        <Path>source/Post-Build Action.vi</Path>
-      </Exclusions>
-      <Exclusions>
         <Path>source/vs_web_service_dev.lvproj</Path>
       </Exclusions>
       <Exclusions>
@@ -159,6 +174,9 @@
       </Exclusions>
       <Exclusions>
         <Path>Pre-Install Custom Action.vi</Path>
+      </Exclusions>
+      <Exclusions>
+        <Path>VSWS Demo Custom Device</Path>
       </Exclusions>
     </Source_Files>
     <License_Agreement_Filepath>builds\LICENSE.txt</License_Agreement_Filepath>
@@ -315,7 +333,7 @@
         <Path>source\vsws_api\Discover.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>9105D8D586D7543583BE168F683F5875</GUID>
+      <GUID>07E5CA9FF0A2B0000F3A97FB0C0E6551</GUID>
     </Functions_Palette_Data>
   </Library_Palette_Definition>
 </VI_Package_Builder_Settings>
