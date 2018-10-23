@@ -11,15 +11,16 @@
 		<Property Name="server.vi.propertiesEnabled" Type="Bool">true</Property>
 		<Property Name="specify.custom.address" Type="Bool">false</Property>
 		<Item Name="BuildScripts" Type="Folder">
+			<Item Name="BuildAll.vi" Type="VI" URL="../BuildScripts/BuildAll.vi"/>
 			<Item Name="Post-Build Action Desktop.vi" Type="VI" URL="../BuildScripts/Post-Build Action Desktop.vi"/>
 			<Item Name="Post-Build Action PharLap.vi" Type="VI" URL="../BuildScripts/Post-Build Action PharLap.vi"/>
 		</Item>
-		<Item Name="DiscoveryServiceTest.vi" Type="VI" URL="../../sandbox/DiscoveryServiceTest.vi"/>
-		<Item Name="example.vi" Type="VI" URL="../../sandbox/example.vi"/>
-		<Item Name="exampleClient.vi" Type="VI" URL="../../sandbox/exampleClient.vi"/>
+		<Item Name="DiscoveryServiceTest.vi" Type="VI" URL="../test/DiscoveryServiceTest.vi"/>
+		<Item Name="example.vi" Type="VI" URL="../test/example.vi"/>
+		<Item Name="exampleClient.vi" Type="VI" URL="../test/exampleClient.vi"/>
 		<Item Name="VeriStandWebService" Type="Web Service">
 			<Property Name="Bld_buildSpecName" Type="Str"></Property>
-			<Property Name="Bld_version.build" Type="Int">9</Property>
+			<Property Name="Bld_version.build" Type="Int">77</Property>
 			<Property Name="ws.autoIncrementVersion" Type="Bool">true</Property>
 			<Property Name="ws.disconnectInline" Type="Bool">true</Property>
 			<Property Name="ws.disconnectTypeDefs" Type="Bool">false</Property>
@@ -32,7 +33,7 @@
 			<Property Name="ws.serveDefaultDoc" Type="Bool">true</Property>
 			<Property Name="ws.SSE2" Type="Bool">true</Property>
 			<Property Name="ws.static_permissions" Type="Str"></Property>
-			<Property Name="ws.version.build" Type="Int">86</Property>
+			<Property Name="ws.version.build" Type="Int">154</Property>
 			<Property Name="ws.version.fix" Type="Int">0</Property>
 			<Property Name="ws.version.major" Type="Int">1</Property>
 			<Property Name="ws.version.minor" Type="Int">0</Property>
@@ -102,19 +103,52 @@
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="8.6CompatibleGlobalVar.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/config.llb/8.6CompatibleGlobalVar.vi"/>
+				<Item Name="AB_Generate_Error_Cluster.vi" Type="VI" URL="/&lt;vilib&gt;/AppBuilder/AB_Generate_Error_Cluster.vi"/>
+				<Item Name="BuildHelpPath.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/BuildHelpPath.vi"/>
 				<Item Name="Check if File or Folder Exists.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/libraryn.llb/Check if File or Folder Exists.vi"/>
+				<Item Name="Check Special Tags.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Check Special Tags.vi"/>
 				<Item Name="Clear Errors.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Clear Errors.vi"/>
+				<Item Name="Convert property node font to graphics font.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Convert property node font to graphics font.vi"/>
 				<Item Name="Custom Device Utility Library.lvlib" Type="Library" URL="/&lt;vilib&gt;/NI VeriStand/Custom Device Tools/Custom Device Utility Library/Custom Device Utility Library.lvlib"/>
+				<Item Name="Details Display Dialog.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Details Display Dialog.vi"/>
+				<Item Name="DialogType.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/DialogType.ctl"/>
+				<Item Name="DialogTypeEnum.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/DialogTypeEnum.ctl"/>
 				<Item Name="Error Cluster From Error Code.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Error Cluster From Error Code.vi"/>
+				<Item Name="Error Code Database.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Error Code Database.vi"/>
+				<Item Name="ErrWarn.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/ErrWarn.ctl"/>
+				<Item Name="eventvkey.ctl" Type="VI" URL="/&lt;vilib&gt;/event_ctls.llb/eventvkey.ctl"/>
+				<Item Name="Find Tag.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Find Tag.vi"/>
+				<Item Name="Format Message String.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Format Message String.vi"/>
+				<Item Name="General Error Handler Core CORE.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/General Error Handler Core CORE.vi"/>
+				<Item Name="General Error Handler.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/General Error Handler.vi"/>
+				<Item Name="Get String Text Bounds.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Get String Text Bounds.vi"/>
 				<Item Name="Get System Directory.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/sysdir.llb/Get System Directory.vi"/>
+				<Item Name="Get Text Rect.vi" Type="VI" URL="/&lt;vilib&gt;/picture/picture.llb/Get Text Rect.vi"/>
+				<Item Name="GetHelpDir.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/GetHelpDir.vi"/>
+				<Item Name="GetRTHostConnectedProp.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/GetRTHostConnectedProp.vi"/>
+				<Item Name="GetTargetBuildSpecs (project reference).vi" Type="VI" URL="/&lt;vilib&gt;/AppBuilder/GetTargetBuildSpecs (project reference).vi"/>
+				<Item Name="Invoke BuildTarget.vi" Type="VI" URL="/&lt;vilib&gt;/AppBuilder/Invoke BuildTarget.vi"/>
 				<Item Name="LabVIEWHTTPClient.lvlib" Type="Library" URL="/&lt;vilib&gt;/httpClient/LabVIEWHTTPClient.lvlib"/>
+				<Item Name="Longest Line Length in Pixels.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Longest Line Length in Pixels.vi"/>
+				<Item Name="LVBoundsTypeDef.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/miscctls.llb/LVBoundsTypeDef.ctl"/>
+				<Item Name="LVRectTypeDef.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/miscctls.llb/LVRectTypeDef.ctl"/>
+				<Item Name="NI_App_Builder_API.lvlib" Type="Library" URL="/&lt;vilib&gt;/AppBuilder/AB_API_Simple/NI_App_Builder_API.lvlib"/>
 				<Item Name="NI_FileType.lvlib" Type="Library" URL="/&lt;vilib&gt;/Utility/lvfile.llb/NI_FileType.lvlib"/>
 				<Item Name="NI_LVConfig.lvlib" Type="Library" URL="/&lt;vilib&gt;/Utility/config.llb/NI_LVConfig.lvlib"/>
 				<Item Name="NI_PackedLibraryUtility.lvlib" Type="Library" URL="/&lt;vilib&gt;/Utility/LVLibp/NI_PackedLibraryUtility.lvlib"/>
 				<Item Name="NI_WebServices.lvlib" Type="Library" URL="/&lt;vilib&gt;/wsapi/NI_WebServices.lvlib"/>
+				<Item Name="Not Found Dialog.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Not Found Dialog.vi"/>
 				<Item Name="Path To Command Line String.vi" Type="VI" URL="/&lt;vilib&gt;/AdvancedString/Path To Command Line String.vi"/>
 				<Item Name="PathToUNIXPathString.vi" Type="VI" URL="/&lt;vilib&gt;/Platform/CFURL.llb/PathToUNIXPathString.vi"/>
+				<Item Name="Search and Replace Pattern.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Search and Replace Pattern.vi"/>
+				<Item Name="Set Bold Text.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Set Bold Text.vi"/>
+				<Item Name="Set String Value.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Set String Value.vi"/>
+				<Item Name="Space Constant.vi" Type="VI" URL="/&lt;vilib&gt;/dlg_ctls.llb/Space Constant.vi"/>
 				<Item Name="System Directory Type.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/sysdir.llb/System Directory Type.ctl"/>
+				<Item Name="System Exec.vi" Type="VI" URL="/&lt;vilib&gt;/Platform/system.llb/System Exec.vi"/>
+				<Item Name="TagReturnType.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/TagReturnType.ctl"/>
+				<Item Name="Three Button Dialog CORE.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Three Button Dialog CORE.vi"/>
+				<Item Name="Three Button Dialog.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Three Button Dialog.vi"/>
 				<Item Name="Trim Whitespace.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Trim Whitespace.vi"/>
 				<Item Name="UDP Multicast Open.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/tcp.llb/UDP Multicast Open.vi"/>
 				<Item Name="UDP Multicast Read-Only Open.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/tcp.llb/UDP Multicast Read-Only Open.vi"/>
@@ -122,6 +156,7 @@
 				<Item Name="UDP Multicast Write-Only Open.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/tcp.llb/UDP Multicast Write-Only Open.vi"/>
 				<Item Name="whitespace.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/whitespace.ctl"/>
 			</Item>
+			<Item Name="provcom_StringGlobals.vi" Type="VI" URL="/&lt;resource&gt;/Framework/Providers/Common/provcom_StringGlobals.vi"/>
 			<Item Name="vsws.lvlib" Type="Library" URL="../vsws_api/vsws.lvlib"/>
 			<Item Name="ws_runtime.dll" Type="Document" URL="ws_runtime.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
@@ -141,20 +176,20 @@
 				<Property Name="Bld_excludeInlineSubVIs" Type="Bool">true</Property>
 				<Property Name="Bld_excludeLibraryItems" Type="Bool">true</Property>
 				<Property Name="Bld_excludePolymorphicVIs" Type="Bool">true</Property>
-				<Property Name="Bld_localDestDir" Type="Path">../builds/VeriStand Web Service/2017/Desktop</Property>
+				<Property Name="Bld_localDestDir" Type="Path">../builds/VeriStand Web Service/Desktop</Property>
 				<Property Name="Bld_localDestDirType" Type="Str">relativeToCommon</Property>
 				<Property Name="Bld_postActionVIID" Type="Ref">/My Computer/BuildScripts/Post-Build Action Desktop.vi</Property>
 				<Property Name="Bld_previewCacheID" Type="Str">{509729F7-4BF2-4ECD-802E-CC6EBD33DB73}</Property>
-				<Property Name="Bld_version.build" Type="Int">6</Property>
+				<Property Name="Bld_version.build" Type="Int">74</Property>
 				<Property Name="Bld_version.major" Type="Int">1</Property>
 				<Property Name="Destination[0].destName" Type="Str">dummy.exe</Property>
-				<Property Name="Destination[0].path" Type="Path">../builds/VeriStand Web Service/2017/Desktop/dummy.exe</Property>
+				<Property Name="Destination[0].path" Type="Path">../builds/VeriStand Web Service/Desktop/dummy.exe</Property>
 				<Property Name="Destination[0].preserveHierarchy" Type="Bool">true</Property>
 				<Property Name="Destination[0].type" Type="Str">App</Property>
 				<Property Name="Destination[1].destName" Type="Str">Support Directory</Property>
-				<Property Name="Destination[1].path" Type="Path">../builds/VeriStand Web Service/2017/Desktop/data</Property>
+				<Property Name="Destination[1].path" Type="Path">../builds/VeriStand Web Service/Desktop/data</Property>
 				<Property Name="DestinationCount" Type="Int">2</Property>
-				<Property Name="Source[0].itemID" Type="Str">{656BB0CB-AE9D-4DAC-961A-D0D8EE9A38E7}</Property>
+				<Property Name="Source[0].itemID" Type="Str">{FC47E228-26EE-4069-836A-834C1894167F}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[1].itemID" Type="Ref">/My Computer/example.vi</Property>
@@ -252,10 +287,10 @@ AddOutputFilter chunkFilter
 		<Property Name="target.WebServer.ViAccess" Type="Str">+*</Property>
 		<Property Name="target.webservices.SecurityAPIKey" Type="Str">PqVr/ifkAQh+lVrdPIykXlFvg12GhhQFR8H9cUhphgg=:pTe9HRlQuMfJxAG6QCGq7UvoUpJzAzWGKy5SbZ+roSU=</Property>
 		<Property Name="target.webservices.ValidTimestampWindow" Type="Int">15</Property>
-		<Item Name="example.vi" Type="VI" URL="../../sandbox/example.vi"/>
+		<Item Name="example.vi" Type="VI" URL="../test/example.vi"/>
 		<Item Name="VeriStandWebService" Type="Web Service">
 			<Property Name="Bld_buildSpecName" Type="Str"></Property>
-			<Property Name="Bld_version.build" Type="Int">91</Property>
+			<Property Name="Bld_version.build" Type="Int">159</Property>
 			<Property Name="ws.autoIncrementVersion" Type="Bool">true</Property>
 			<Property Name="ws.disconnectInline" Type="Bool">true</Property>
 			<Property Name="ws.disconnectTypeDefs" Type="Bool">false</Property>
@@ -268,7 +303,7 @@ AddOutputFilter chunkFilter
 			<Property Name="ws.serveDefaultDoc" Type="Bool">true</Property>
 			<Property Name="ws.SSE2" Type="Bool">true</Property>
 			<Property Name="ws.static_permissions" Type="Str"></Property>
-			<Property Name="ws.version.build" Type="Int">91</Property>
+			<Property Name="ws.version.build" Type="Int">159</Property>
 			<Property Name="ws.version.fix" Type="Int">0</Property>
 			<Property Name="ws.version.major" Type="Int">1</Property>
 			<Property Name="ws.version.minor" Type="Int">0</Property>
@@ -374,12 +409,12 @@ AddOutputFilter chunkFilter
 				<Property Name="Bld_excludeInlineSubVIs" Type="Bool">true</Property>
 				<Property Name="Bld_excludeLibraryItems" Type="Bool">true</Property>
 				<Property Name="Bld_excludePolymorphicVIs" Type="Bool">true</Property>
-				<Property Name="Bld_localDestDir" Type="Path">../builds/VeriStand Web Service/2017/PharLap</Property>
+				<Property Name="Bld_localDestDir" Type="Path">../builds/VeriStand Web Service/NI_AB_TARGETNAME</Property>
 				<Property Name="Bld_localDestDirType" Type="Str">relativeToCommon</Property>
 				<Property Name="Bld_postActionVIID" Type="Ref">/My Computer/BuildScripts/Post-Build Action PharLap.vi</Property>
 				<Property Name="Bld_previewCacheID" Type="Str">{DC48DF9D-6A97-480E-A83A-8C616D04D4AB}</Property>
 				<Property Name="Bld_targetDestDir" Type="Path">/c/ni-rt/startup</Property>
-				<Property Name="Bld_version.build" Type="Int">39</Property>
+				<Property Name="Bld_version.build" Type="Int">107</Property>
 				<Property Name="Bld_version.major" Type="Int">17</Property>
 				<Property Name="Destination[0].destName" Type="Str">dummy.rtexe</Property>
 				<Property Name="Destination[0].path" Type="Path">/c/ni-rt/startup/dummy.rtexe</Property>
@@ -393,7 +428,7 @@ AddOutputFilter chunkFilter
 				<Property Name="Destination[2].path" Type="Path">/c/ni-rt/startup</Property>
 				<Property Name="Destination[2].path.type" Type="Str">&lt;none&gt;</Property>
 				<Property Name="DestinationCount" Type="Int">3</Property>
-				<Property Name="Source[0].itemID" Type="Str">{7DE47DAF-AFBB-4DA9-8214-7C3E62197533}</Property>
+				<Property Name="Source[0].itemID" Type="Str">{621FE303-1B12-4658-993C-08057E377600}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[1].itemID" Type="Ref">/PharLap/example.vi</Property>
